@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.codmstretch.hook'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.codmstretch.hook'
+        minSdk 26
+        targetSdk 34
+        versionCode 2
+        versionName '2.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Xposed API classes are provided by LSPosed at runtime - never package them.
+    compileOnly project(':xposed-stub')
+}
